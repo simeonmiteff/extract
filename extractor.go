@@ -31,7 +31,7 @@ type Extractor struct {
 		MkdirAll(path string, perm os.FileMode) error
 
 		// OpenFile opens the named file with specified flag (O_RDONLY etc.).
-		OpenFile(name string, flag int, perm os.FileMode) (*os.File, error)
+		OpenFile(name string, flag int, perm os.FileMode) (io.WriteCloser, error)
 
 		// Symlink creates newname as a symbolic link to oldname.
 		Symlink(oldname, newname string) error
